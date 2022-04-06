@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LabelCore</title>
+    <link rel="stylesheet" href="label.core.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="label-core" tabindex="1">
+        <div class="label-toolbar">
+            <ul>
+                <a class="select" title="选择(A)" href="#">
+                    <li class="active">
+                        <span class="iconfont icon-zhizhen"></span>
+                    </li>
+                </a>
+                <a class="move" title="移动/缩放(W)" href="#">
+                    <li>
+                        <span class="iconfont icon-yidong"></span>
+                    </li>
+                </a>
+                <a class="polygon" title="添加多边形区域(Q)" href="#">
+                    <li>
+                        <span class="iconfont icon-duobianxing"></span>
+                    </li>
+                </a>
+                <a class="rectangle" class="" title="添加正方形区域(R)" href="#">
+                    <li>
+                        <span class="iconfont icon-kuangxuanquyu"></span>
+                    </li>
+                </a>
+                <div class="label-divider"></div>
+                <a class="edit" title="重新编辑区域(E)" href="#">
+                    <li>
+                        <span class="iconfont icon-sheji"></span>
+                    </li>
+                </a>
+                <a class="delete" title="删除区域(D)" href="#">
+                    <li>
+                        <span class="iconfont icon-shanchu"></span>
+                    </li>
+                </a>
+                <div class="label-divider"></div>
+                <a class="zoomin" title="放大(Z)" href="#">
+                    <li>
+                        <span class="iconfont icon-fangda"></span>
+                    </li>
+                </a>
+                <a class="zoomout" title="缩小(X)" href="#">
+                    <li>
+                        <span class="iconfont icon-suoxiao"></span>
+                    </li>
+                </a>
+                <div class="label-divider"></div>
+                <a class="save" title="保存(Ctrl+S)" href="#">
+                    <li>
+                        <span class="iconfont icon-baocun"></span>
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <div class="label-area">
+            <div class="label-main">
+                <img src="test.jpg" alt="" srcset="" />
+                <canvas></canvas>
+                <svg class="label-svg" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
+            </div>
+        </div>
+        <div class="label-popup" style="display: none;">
+            <select class="label-label">
+            </select>
+            <textarea class="label-desc" rows="5" placeholder="描述"></textarea>
+            <button class="label-save-label" type="button">保存</button>
+            <button class="label-delete-label" type="button">删除</button>
+        </div>
+        <div class="label-list">
+            <ul>
+            </ul>
+        </div>
+    </div>
+    <script src="label.core.js"></script>
+    <script>
+        var labelcore = new LabelCore(document.querySelector(".label-core"), [{
+            id: 0,
+            type:0,
+            label: "Car",
+            color: "#3498db"
+        }, {
+            id: 1,
+            type:0,
+            label: "People",
+            color: "#2ecc71"
+        }, {
+            id: 2,
+            type:0,
+            label: "Tree",
+            color: "#1abc9c"
+        }, {
+            id: 3,
+            type:1,
+            label: "Building",
+            color: "#9b59b6"
+        }, {
+            id: 4,
+            type:1,
+            label: "Hole",
+            color: "#34495e"
+        }, {
+            id: 5,
+            type:1,
+            label: "Bus",
+            color: "#f1c40f"
+        }, {
+            id: 6,
+            type:1,
+            label: "Sidewalk",
+            color: "#e67e22"
+        }, {
+            id: 7,
+            type:0,
+            label: "Traffic Sign",
+            color: "#e74c3c"
+        }], undefined, function (data, success, error) {
+            console.log(data);
+            success();
+        });
+    </script>
+</body>
+
+</html>
